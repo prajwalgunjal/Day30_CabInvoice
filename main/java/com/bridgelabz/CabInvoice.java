@@ -16,7 +16,18 @@ public class CabInvoice {
         double fare=distance*COST_PER_KM+time*COST_PER_MIN;
         return fare<MIN_FARE?MIN_FARE:fare;
     }
+    public Double calculateFarePremiumm(double distance, double time) {
 
+        double fare=distance*COST_PER_KM_PRE+time*COST_PER_MIN_PRE;
+        return fare<MIN_FARE_PRE?MIN_FARE_PRE:fare;
+    }
+    public double calculateFarePremium(Ride[] rides) {
+        double aggfare=0;
+        for (Ride ride: rides) {
+            aggfare+=calculateFarePremiumm(ride.getDistance(),ride.getTime());
+        }
+        return aggfare;
+    }
     public double calculateFare(Ride[] rides) {
         double aggfare=0;
         for (Ride ride: rides) {
