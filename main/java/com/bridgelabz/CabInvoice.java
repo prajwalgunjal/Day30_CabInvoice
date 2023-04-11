@@ -6,7 +6,10 @@ public class CabInvoice {
 
     public static final int COST_PER_KM = 10;
     public static final int COST_PER_MIN = 1;
+    public static final int COST_PER_KM_PRE = 15;
+    public static final int COST_PER_MIN_PRE = 2;
     public static final int MIN_FARE = 5;
+    public static final int MIN_FARE_PRE = 20;
 
 
     public Double calculateFare(double distance, double time) {
